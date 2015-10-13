@@ -15,4 +15,4 @@ gem 'foodcritic'
 gem 'rake-chef-syntax'
 gem 'chefspec'
 gem 'rubocop'
-gem 'stove'
+

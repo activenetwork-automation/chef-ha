@@ -2,7 +2,6 @@ require 'bundler'
 require 'rubocop/rake_task'
 require 'foodcritic'
 require 'rspec/core/rake_task'
-require 'stove/rake_task'
 require 'chef/knife'
 
 desc 'Run all tests except Kitchen (default task)'
