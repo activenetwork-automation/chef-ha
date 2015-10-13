@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/activenetwork-automation/chef-ha.svg)](https://travis-ci.org/activenetwork-automation/chef-ha)
+
 chef-ha cookbook
 =================
 This cookbook creates a Chef cluster in HA from beginning to end.
