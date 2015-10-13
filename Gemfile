@@ -7,7 +7,7 @@ source 'https://rubygems.org'
 
 gem 'berkshelf'
 gem 'semverse'
-gem 'chef'
+gem 'chef', '=12.4.1' # until https://github.com/atomic-penguin/cookbook-nfs/pull/67 is merged
 gem 'chef-zero'
 gem 'test-kitchen'
 gem 'kitchen-vagrant'
