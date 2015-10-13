@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/activenetwork-automation/chef-ha.svg)](https://travis-ci.org/activenetwork-automation/chef-ha)
+[![Build Status](https://travis-ci.org/activenetwork-automation/chef-ha.svg)](https://travis-ci.org/activenetwork-automation/chef-ha) [![Dependency Status](https://gemnasium.com/activenetwork-automation/chef-ha.svg)](https://gemnasium.com/activenetwork-automation/chef-ha)
 
 chef-ha cookbook
 =================
