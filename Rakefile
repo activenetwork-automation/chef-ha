@@ -13,7 +13,7 @@ desc 'Run linters'
 task lint: [:rubocop, :foodcritic]
 
 desc 'Run all tests'
-task test: [:integration, :acceptance]
+task test: [:integration]
 
 # ChefSpec
 desc 'Run ChefSpec tests'
@@ -40,26 +40,4 @@ end
 desc 'Run Rubocop lint checks'
 task :rubocop do
   RuboCop::RakeTask.new
-end
-
-# Test Kitchen
-begin
-  require 'kitchen/rake_tasks'
-  Kitchen::RakeTasks.new
-
-  desc 'Alias for kitchen:all'
-  task acceptance: 'kitchen:all'
-
-rescue LoadError
-  puts '>>>>> Kitchen gem not loaded, omitting tasks' # unless ENV['CI']
-end
-
-desc 'Release and Publish'
-task :release do
-  if File.exist?("#{ENV['HOME']}/.stove")
-    require 'stove/rake_task'
-    Stove::RakeTask.new(:release)
-  else
-    puts "Please use 'stove login' before attempting to release."
-  end
 end
