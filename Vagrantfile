@@ -5,7 +5,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # global defaults
   config.berkshelf.enabled = true
   config.landrush.enabled = true
-  config.landrush.upstream '10.119.12.100'
 
   config.vm.box = 'boxcutter/centos66'
   domain = '.vagrant.dev'
