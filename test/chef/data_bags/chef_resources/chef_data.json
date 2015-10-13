@@ -1,0 +1,35 @@
+{
+  "id": "chef_data",
+  "local": {
+    "machines":[
+      {
+        "name": "chef1.vagrant.dev",
+        "ip": "192.168.193.129",
+        "role": "backend",
+        "bootstrap": "true"
+      },
+      {
+        "name": "chef2.vagrant.dev",
+        "ip": "192.168.193.130",
+        "role": "backend",
+        "bootstrap": "false"
+      },
+      {
+        "name": "chef3.vagrant.dev",
+        "ip": "192.168.193.137",
+        "role": "frontend"
+      },
+      {
+        "name": "chef-vip.vagrant.dev",
+        "ip": "192.168.193.135",
+        "role": "backend_vip",
+        "device": "eth0"
+      }
+    ],
+    "frontend_vip": "chef.vagrant.dev",
+    "admins": "['jnguyen']",
+    "ldap": {
+      "enable_ldap": false
+    }
+  }
+}

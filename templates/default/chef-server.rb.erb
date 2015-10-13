@@ -1,0 +1,31 @@
+topology "ha"
+
+<%  @machines.each do |entry| %>
+<%    case entry['role'] %>
+<%      when 'backend' %>
+server "<%=entry['name']%>",
+  :ipaddress => "<%=entry['ip']%>",
+  :role => "backend"<% if entry['bootstrap'] == "true" %>,
+  :bootstrap => true<% end %>
+
+<%      when 'frontend' %>server "<%= entry['name'] %>",
+  :ipaddress => "<%= entry['ip'] %>",
+  :role => "frontend"
+
+<%      when 'backend_vip' %>backend_vip "<%=entry['name']%>",
+  :ipaddress => "<%= entry['ip'] %>",
+  :device => "<%= entry['device'] %>"
+<%    end %>
+<%  end %>
+
+api_fqdn "<%= @frontend_vip %>"
+
+<% if @ldap['enable_ldap'] then %>
+ldap['base_dn']           = '<%= @ldap['base_dn'] %>'
+ldap['bind_dn']           = '<%= @ldap['bind_dn'] %>'
+ldap['bind_password']     = '<%= @ldap['bind_password'] %>'
+ldap['host']              = '<%= @ldap['host'] %>'
+ldap['system_adjective']  = '<%= @ldap['system_adjective'] %>'
+<% end %>
+
+oc_id['administrators'] = <%= @admins %>

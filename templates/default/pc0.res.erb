@@ -1,0 +1,15 @@
+resource pc0 {
+  syncer {
+    rate 1100M;
+  }
+<%  @machines.each do |entry| %>
+<%  if entry['role'] == 'backend' %>
+  on <%= entry['name'] %> {
+    device /dev/drbd0;
+    disk /dev/opscode/drbd;
+    flexible-meta-disk  internal;
+    address <%= entry['ip'] %>:7788;
+  }
+
+<% end end %>
+}
